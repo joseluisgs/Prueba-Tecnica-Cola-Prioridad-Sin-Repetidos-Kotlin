@@ -1,5 +1,6 @@
 package controllers
 
+import errors.ProcesoException
 import io.mockk.*
 import io.mockk.impl.annotations.InjectMockKs
 import io.mockk.impl.annotations.MockK
@@ -36,10 +37,10 @@ internal class ProcesosControllerTest {
         unmockkAll()
     }
 
-    @BeforeEach
-    fun setUpTest() {
-        //controller = ProcesosController(repository)
-    }
+    /*  @BeforeEach
+      fun setUpTest() {
+          //controller = ProcesosController(repository)
+      }*/
 
     @Test
     fun getAll() {
@@ -75,7 +76,6 @@ internal class ProcesosControllerTest {
         controller.push(p1)
 
         verify(exactly = 1) { repository.push(p1) }
-
     }
 
     @Test
@@ -93,9 +93,7 @@ internal class ProcesosControllerTest {
             { assert(res.prioridad == p1.prioridad) },
         )
 
-        verify(exactly = 1) { repository.get(p1.id) }
-
-
+        verify(atLeast = 1) { repository.get(p1.id) }
     }
 
     @Test
@@ -113,10 +111,7 @@ internal class ProcesosControllerTest {
             { assert(res.prioridad == p1.prioridad) },
         )
 
-        // El verify
         verify(exactly = 1) { repository.pop() }
-
-
     }
 
     @Test
@@ -128,8 +123,33 @@ internal class ProcesosControllerTest {
         assertTrue(res)
 
         verify(exactly = 1) { repository.isEmpty() }
+    }
 
+    @Test
+    fun getNoExiste() {
+        val id = 1
+        every { repository.get(id) } returns null
 
+        val ex = assertThrows<ProcesoException> {
+            val res = controller.get(id)
+        }
+
+        assert(ex.message == "No existe el proceso con id $id")
+
+        verify(atLeast = 1) { repository.get(id) }
+    }
+
+    @Test
+    fun popNoExiste() {
+        every { repository.pop() } returns null
+
+        val ex = assertThrows<ProcesoException> {
+            controller.pop()
+        }
+
+        assert(ex.message == "No existe el procesos o la cola esta vacía")
+
+        verify(atLeast = 1) { repository.pop() }
     }
 
 }

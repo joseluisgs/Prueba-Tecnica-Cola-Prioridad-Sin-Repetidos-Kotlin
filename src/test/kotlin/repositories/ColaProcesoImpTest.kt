@@ -55,6 +55,15 @@ internal class ColaProcesoImpTest {
     }
 
     @Test
+    fun popVacio() {
+        val cola = ColaProcesoImp()
+
+        val res = cola.pop()
+
+        assert(res == null)
+    }
+
+    @Test
     fun isEmpty() {
         assert(cola.isEmpty())
         cola.push(Proceso(1, "Proceso 1", 1))
@@ -84,6 +93,16 @@ internal class ColaProcesoImpTest {
             { assert(p2?.nombre == "Proceso 2") },
             { assert(p2?.prioridad == 2) }
         )
+    }
+
+    @Test
+    fun getNoExiste() {
+        cola.push(Proceso(1, "Proceso 1", 1))
+        cola.push(Proceso(2, "Proceso 2", 2))
+
+        var res = cola.get(3)
+
+        assert(res == null)
     }
 
     @Test
