@@ -7,7 +7,7 @@ import repositories.ColaProceso
 /**
  * Esto no es obligatorio, solo lo uso para usar Mockito
  */
-class ProcesosController (private val procesos: ColaProceso) {
+class ProcesosController(private val procesos: ColaProceso) {
 
     fun push(proceso: Proceso) {
         procesos.push(proceso)
