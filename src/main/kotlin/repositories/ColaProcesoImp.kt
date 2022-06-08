@@ -23,13 +23,13 @@ class ColaProcesoImp : ColaProceso {
         return cola.isEmpty()
     }
 
-    override fun size(): Int {
-        return cola.size
-    }
+    override val size: Int
+        get() = cola.size
 
     override fun get(id: Int): Proceso? {
         return cola.find { it.id == id }
     }
+
 
     // si queremos sacarla como prioridad, ordenamos en este momento
     override fun toString(): String {
