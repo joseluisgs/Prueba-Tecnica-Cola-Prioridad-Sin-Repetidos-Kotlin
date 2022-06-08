@@ -2,7 +2,7 @@ package repositories
 
 import models.Proceso
 
-class ColaImp : Cola<Proceso> {
+class ColaProcesoImp : ColaProceso {
     // Al ser un set, pues no admite elementos repetidos
     private val cola = mutableSetOf<Proceso>()
 
@@ -23,16 +23,20 @@ class ColaImp : Cola<Proceso> {
         return cola.isEmpty()
     }
 
-    fun size(): Int {
+    override fun size(): Int {
         return cola.size
     }
 
-    fun get(id: Int): Proceso? {
+    override fun get(id: Int): Proceso? {
         return cola.find { it.id == id }
     }
 
     // si queremos sacarla como prioridad, ordenamos en este momento
     override fun toString(): String {
-        return cola.toList().sortedBy { it.prioridad }.reversed().joinToString(separator = "\n")
+        return this.getAll().joinToString(separator = "\n")
+    }
+
+    override fun getAll(): List<Proceso> {
+        return cola.toList().sortedBy { it.prioridad }.reversed()
     }
 }

@@ -5,17 +5,17 @@ import org.junit.jupiter.api.BeforeEach
 import org.junit.jupiter.api.Test
 import org.junit.jupiter.api.assertAll
 
-internal class ColaImpTest {
-    private lateinit var cola: ColaImp
+internal class ColaProcesoImpTest {
+    private lateinit var cola: ColaProceso
 
     @BeforeEach
     fun setUp() {
-        cola = ColaImp()
+        cola = ColaProcesoImp()
     }
 
     @Test
     fun push() {
-        val cola = ColaImp()
+        val cola = ColaProcesoImp()
         cola.push(Proceso(1, "Proceso 1", 1))
         cola.push(Proceso(2, "Proceso 2", 2))
 
@@ -34,7 +34,7 @@ internal class ColaImpTest {
 
     @Test
     fun pop() {
-        val cola = ColaImp()
+        val cola = ColaProcesoImp()
         cola.push(Proceso(1, "Proceso 1", 1))
         cola.push(Proceso(2, "Proceso 2", 2))
 
@@ -83,6 +83,24 @@ internal class ColaImpTest {
             { assert(p2?.id == 2) },
             { assert(p2?.nombre == "Proceso 2") },
             { assert(p2?.prioridad == 2) }
+        )
+    }
+
+    @Test
+    fun getAll() {
+        cola.push(Proceso(1, "Proceso 1", 1))
+        cola.push(Proceso(2, "Proceso 2", 2))
+
+        val p2 = cola.getAll()[0]
+        val p1 = cola.getAll()[1]
+
+        assertAll(
+            { assert(p1.id == 1) },
+            { assert(p1.nombre == "Proceso 1") },
+            { assert(p1.prioridad == 1) },
+            { assert(p2.id == 2) },
+            { assert(p2.nombre == "Proceso 2") },
+            { assert(p2.prioridad == 2) }
         )
     }
 }
