@@ -1,10 +1,10 @@
 # Kotlin Cola Prioridad Sin Repetidos
 
-Ejemplo de una prueba técnica Junior aplicable a cualquier lenguaje
+Ejemplo de una prueba técnica Junior aplicable a cualquier lenguaje.
 
 [![Kotlin](https://img.shields.io/badge/Code-Kotlin-blueviolet)](https://kotlinlang.org/)
 [![LISENCE](https://img.shields.io/badge/Lisence-MIT-green)]()
-![GitHub](https://img.shields.io/github/last-commit/joseluisgs/Kotlin-Cola-Prioridad-Sin-Repetidos)
+![GitHub](https://img.shields.io/github/last-commit/joseluisgs/Kotlin-Prueba-Tecnica-Cola-Prioridad-Sin-Repetidos)
 
 ![imagen](https://www.adesso-mobile.de/wp-content/uploads/2021/02/kotlin-einfu%CC%88hrung.jpg)
 
@@ -14,8 +14,11 @@ Este ejercicio de clase, tiene como objetivo mostrar aspectos de programación p
 
 La idea principal es que puedas resolverlo con cualquier lenguaje de programación. Pero son los sutiles detalles lo que
 marcan la diferencia.
-Hay infinitas soluciones, pero lo importante no es qué lo resuelvas si no el cómo lo resuelvas, las técnicas que
-apliques y sobre todo cómo lo expliques.
+Hay infinitas soluciones. Aunque está centrada en Kotlin, parcialmente tienes un directorio con la solución parcialmente
+en Java vista en clase.
+Aunque lo importante es que puedas resolverlo con cualquier lenguaje de programación y sigas los pasos indicados siempre
+que puedas.
+No es tanto el qué resuelvas si no el cómo lo resuelvas y lo que expliques, comentarios o técnicas que utilices.
 
 Te dejo algunos consejos.
 

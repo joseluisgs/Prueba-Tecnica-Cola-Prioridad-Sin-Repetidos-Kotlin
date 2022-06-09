@@ -6,14 +6,20 @@ import io.mockk.impl.annotations.InjectMockKs
 import io.mockk.impl.annotations.MockK
 import io.mockk.junit5.MockKExtension
 import models.Proceso
-import org.junit.jupiter.api.*
 import org.junit.jupiter.api.Assertions.assertTrue
+import org.junit.jupiter.api.Test
+import org.junit.jupiter.api.assertAll
+import org.junit.jupiter.api.assertThrows
 import org.junit.jupiter.api.extension.ExtendWith
 import repositories.ColaProceso
 
-// // https://mockk.io/
+/**
+ * No es necesario, pero lo he hecho para usar Mockito
+ * En este caso un Mockito dopado para Kotlin que es MockK
+ *
+ */
 @ExtendWith(MockKExtension::class)
-@TestInstance(TestInstance.Lifecycle.PER_CLASS) // BeforeAll y AfterAll
+// @TestInstance(TestInstance.Lifecycle.PER_CLASS) // BeforeAll y AfterAll
 internal class ProcesosControllerTest {
     @MockK
     lateinit var repository: ColaProceso
@@ -21,21 +27,23 @@ internal class ProcesosControllerTest {
     @InjectMockKs
     lateinit var controller: ProcesosController
 
+    /*
+    // No es necesario, al usar MockK se puede usar con el init
     @BeforeAll
     fun setUp() {
+        MockKAnnotations.init(this)
+    }*/
+
+    init {
         MockKAnnotations.init(this)
     }
 
     /*
-    init {
-        MockKAnnotations.init(this)
-    }
-     */
-
+    // Como solo estamos usando un Mock no debemos romperlos todos
     @AfterAll
     fun tearDown() {
         unmockkAll()
-    }
+    }*/
 
     /*  @BeforeEach
       fun setUpTest() {
