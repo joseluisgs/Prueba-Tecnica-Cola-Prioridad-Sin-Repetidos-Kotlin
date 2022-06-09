@@ -61,6 +61,7 @@ internal class ProcesosControllerTest {
             { assert(res[1] == list[1]) },
             { assert(res[1].id == list[1].id) },
             { assert(res[1].prioridad == list[1].prioridad) },
+            { assert(res[0].prioridad >= res[1].prioridad) },
         )
 
         // El verify
@@ -77,6 +78,7 @@ internal class ProcesosControllerTest {
 
         verify(exactly = 1) { repository.push(p1) }
     }
+
 
     @Test
     fun get() {

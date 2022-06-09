@@ -15,7 +15,6 @@ internal class ColaProcesoImpTest {
 
     @Test
     fun push() {
-        val cola = ColaProcesoImp()
         cola.push(Proceso(1, "Proceso 1", 1))
         cola.push(Proceso(2, "Proceso 2", 2))
 
@@ -33,8 +32,23 @@ internal class ColaProcesoImpTest {
     }
 
     @Test
+    fun pushRepetidos() {
+        cola.push(Proceso(1, "Proceso 1", 1))
+        cola.push(Proceso(1, "Proceso 1", 6))
+
+        val p1 = cola.get(1)
+        val p2 = cola.get(2)
+        assertAll(
+            { assert(cola.size == 1) },
+            { assert(p1?.id == 1) },
+            { assert(p1?.nombre == "Proceso 1") },
+            { assert(p1?.prioridad == 1) },
+            { assert(p2 == null) },
+        )
+    }
+
+    @Test
     fun pop() {
-        val cola = ColaProcesoImp()
         cola.push(Proceso(1, "Proceso 1", 1))
         cola.push(Proceso(2, "Proceso 2", 2))
 
@@ -56,8 +70,6 @@ internal class ColaProcesoImpTest {
 
     @Test
     fun popVacio() {
-        val cola = ColaProcesoImp()
-
         val res = cola.pop()
 
         assert(res == null)
@@ -120,6 +132,25 @@ internal class ColaProcesoImpTest {
             { assert(p2.id == 2) },
             { assert(p2.nombre == "Proceso 2") },
             { assert(p2.prioridad == 2) }
+        )
+    }
+
+    @Test
+    fun getAllPrioridad() {
+        cola.push(Proceso(1, "Proceso 1", 1))
+        cola.push(Proceso(2, "Proceso 2", 2))
+
+        val p2 = cola.getAll()[0]
+        val p1 = cola.getAll()[1]
+
+        assertAll(
+            { assert(p1.id == 1) },
+            { assert(p1.nombre == "Proceso 1") },
+            { assert(p1.prioridad == 1) },
+            { assert(p2.id == 2) },
+            { assert(p2.nombre == "Proceso 2") },
+            { assert(p2.prioridad == 2) },
+            { assert(p2.prioridad >= p1.prioridad) }
         )
     }
 }
