@@ -5,7 +5,9 @@ import models.Proceso
 import repositories.ColaProceso
 
 /**
- * Esto no es obligatorio, solo lo uso para usar Mockito
+ * Esto no es obligatorio, solo lo uso para usar Mockito y puedeas ver una forma de testear
+ * Lo ideal es solo hacer la cola
+ * Aplico Inyección de Dependencias por constructor
  */
 class ProcesosController(private val procesos: ColaProceso) {
 

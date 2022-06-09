@@ -2,6 +2,9 @@ import controllers.ProcesosController
 import models.Proceso
 import repositories.ColaProcesoImp
 
+/**
+ * Main de Ejemplo, no es necesario para el proyecto, pues con los test es suficiente
+ */
 fun main() {
     println("Hola Cola con Prioridad sin Repetidos")
     // Voy a meter valores
