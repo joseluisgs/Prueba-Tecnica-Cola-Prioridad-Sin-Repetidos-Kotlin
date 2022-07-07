@@ -3,11 +3,37 @@
 Ejemplo de una prueba técnica Junior aplicable a cualquier lenguaje.
 
 [![Kotlin](https://img.shields.io/badge/Code-Kotlin-blueviolet)](https://kotlinlang.org/)
-[![LISENCE](https://img.shields.io/badge/Lisence-MIT-green)]()
-![GitHub](https://img.shields.io/github/last-commit/joseluisgs/Kotlin-Prueba-Tecnica-Cola-Prioridad-Sin-Repetidos)
+[![Java](https://img.shields.io/badge/Code-Java-blue)](https://java.org/)
+[![LISENCE](https://img.shields.io/badge/Lisence-MIT-%23e64545)](https://joseluisgs.github.io/docs/license/)
+![GitHub](https://img.shields.io/github/last-commit/joseluisgs/Prueba-Tecnica-Cola-Prioridad-Sin-Repetidos-Kotlin)
 
-![imagen](https://www.adesso-mobile.de/wp-content/uploads/2021/02/kotlin-einfu%CC%88hrung.jpg)
+<p align="center">
+  <a href="https://joseluisgs.github.io/" target="_blank"><img src="https://joseluisgs.github.io/img/web01.svg" 
+  width='600px' borderRadius='1rem' boxShadow = '0 5px 18px rgba(0,0,0,0.3)'></a>
+</p>
 
+- [Kotlin Cola Prioridad Sin Repetidos](#kotlin-cola-prioridad-sin-repetidos)
+  - [El problema](#el-problema)
+  - [Hazlo en otros lenguajes](#hazlo-en-otros-lenguajes)
+  - [Acerca de](#acerca-de)
+  - [Antes de programar](#antes-de-programar)
+  - [Haz un repositorio](#haz-un-repositorio)
+  - [Piensa primero en los test](#piensa-primero-en-los-test)
+  - [Ahora implementa la solución](#ahora-implementa-la-solución)
+  - [Documenta tu solución](#documenta-tu-solución)
+  - [Tiempo](#tiempo)
+  - [Autor](#autor)
+    - [Contacto](#contacto)
+  - [Licencia](#licencia)
+
+## El problema
+Tenemos un proceso, que tiene un identificador, un nombre y una prioridad. 
+Queremos manejar una cola de prioridad, sin repetidos. Sabremos que un elemento es repetido si tiene el mismo id. La prioridad es de 1 a 9 siendo 9 la más alta.
+Por otro lado queremos un controlador que nos centralice el proceso de acceso a la cola.
+Se pide resolver el problema, justificando tu solución y testear las operaciones críticas a nivel de la cola y controlador.
+
+## Hazlo en otros lenguajes
+Si quieres hacerlo en otros lenguajes, crea un directorio con el nombre del lenguaje y mete el proyecto de tu solución. Es importante que muestres que todo se testea a nivel unitario y usando algún mock. Una vez hecho hazme un pull-resuqetes y pasame el color del logo del lenguaje que quieres que salga en la cabecera ¿Te atreves? 😉
 ## Acerca de
 
 Este ejercicio de clase, tiene como objetivo mostrar aspectos de programación para la realización de una prueba técnica.
@@ -75,6 +101,7 @@ Finalmente, haz un README.md con todo lo que has hecho y justificando tus elecci
 Piensa que el tiempo no es infinito, esto no te debería llevar las de 75 minutos y mucho me parece :)
 Intenta no pasar más de 60 minutos. Si no lo consigues, no te preocupes, puedes volver a empezar y seguir practicando.
 
+
 ## Autor
 
 Codificado con :sparkling_heart: por [José Luis González Sánchez](https://twitter.com/joseluisgonsan)
@@ -83,30 +110,37 @@ Codificado con :sparkling_heart: por [José Luis González Sánchez](https://twi
 [![GitHub](https://img.shields.io/github/followers/joseluisgs?style=social)](https://github.com/joseluisgs)
 
 ### Contacto
-
 <p>
   Cualquier cosa que necesites házmelo saber por si puedo ayudarte 💬.
 </p>
 <p>
-    <a href="https://twitter.com/joseluisgonsan" target="_blank">
-        <img src="https://i.imgur.com/U4Uiaef.png" 
+ <a href="https://joseluisgs.github.io/" target="_blank">
+        <img src="https://joseluisgs.github.io/img/favicon.png" 
     height="30">
-    </a> &nbsp;&nbsp;
+    </a>  &nbsp;&nbsp;
     <a href="https://github.com/joseluisgs" target="_blank">
         <img src="https://distreau.com/github.svg" 
+    height="30">
+    </a> &nbsp;&nbsp;
+        <a href="https://twitter.com/joseluisgonsan" target="_blank">
+        <img src="https://i.imgur.com/U4Uiaef.png" 
     height="30">
     </a> &nbsp;&nbsp;
     <a href="https://www.linkedin.com/in/joseluisgonsan" target="_blank">
         <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/LinkedIn_logo_initials.png/768px-LinkedIn_logo_initials.png" 
     height="30">
     </a>  &nbsp;&nbsp;
-    <a href="https://joseluisgs.github.io/" target="_blank">
-        <img src="https://joseluisgs.github.io/favicon.png" 
+    <a href="https://discordapp.com/users/joseluisgs#3560" target="_blank">
+        <img src="https://logodownload.org/wp-content/uploads/2017/11/discord-logo-4-1.png" 
     height="30">
-    </a>
+    </a> &nbsp;&nbsp;
+    <a href="https://g.dev/joseluisgs" target="_blank">
+        <img loading="lazy" src="https://googlediscovery.com/wp-content/uploads/google-developers.png" 
+    height="30">
+    </a>    
 </p>
 
 ## Licencia
 
-Este proyecto está licenciado bajo licencia **MIT**, si desea saber más, visite el fichero [LICENSE](./LICENSE) para su
-uso docente y educativo.
+Este proyecto esta licenciado bajo licencia **MIT**, si desea saber más, visite el fichero
+[LICENSE](https://joseluisgs.github.io/docs/license/) para su uso docente y educativo.
