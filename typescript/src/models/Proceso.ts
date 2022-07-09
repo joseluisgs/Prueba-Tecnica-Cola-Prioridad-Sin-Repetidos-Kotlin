@@ -5,7 +5,7 @@ class Proceso {
   readonly prioridad: number
 
   // Normal signature with defaults
-  constructor (id = 0, nombre = 'Proceso', prioridad = 0) {
+  constructor(id = 0, nombre = 'Proceso', prioridad = 0) {
     this.id = id
     this.nombre = nombre
     if (prioridad < 1) {
