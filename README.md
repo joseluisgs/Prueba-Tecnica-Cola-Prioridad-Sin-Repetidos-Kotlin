@@ -1,9 +1,10 @@
-# Kotlin Cola Prioridad Sin Repetidos
+# Prueba Técnica Cola Prioridad Sin Repetidos
 
 Ejemplo de una prueba técnica Junior aplicable a cualquier lenguaje.
 
 [![Kotlin](https://img.shields.io/badge/Code-Kotlin-blueviolet)](https://kotlinlang.org/)
-[![Java](https://img.shields.io/badge/Code-Java-blue)](https://java.org/)
+[![Java](https://img.shields.io/badge/Code-Java-red)](https://java.org/)
+[![TypeScript](https://img.shields.io/badge/Code-TypeScript-blue)](https://www.typescriptlang.org/)
 [![LISENCE](https://img.shields.io/badge/Lisence-MIT-%23e64545)](https://joseluisgs.github.io/docs/license/)
 ![GitHub](https://img.shields.io/github/last-commit/joseluisgs/Prueba-Tecnica-Cola-Prioridad-Sin-Repetidos-Kotlin)
 
@@ -12,9 +13,10 @@ Ejemplo de una prueba técnica Junior aplicable a cualquier lenguaje.
   width='600px' borderRadius='1rem' boxShadow = '0 5px 18px rgba(0,0,0,0.3)'></a>
 </p>
 
-- [Kotlin Cola Prioridad Sin Repetidos](#kotlin-cola-prioridad-sin-repetidos)
+- [Prueba Técnica Cola Prioridad Sin Repetidos](#prueba-técnica-cola-prioridad-sin-repetidos)
   - [El problema](#el-problema)
   - [Hazlo en otros lenguajes](#hazlo-en-otros-lenguajes)
+    - [Lenguajes disponibles](#lenguajes-disponibles)
   - [Acerca de](#acerca-de)
   - [Antes de programar](#antes-de-programar)
   - [Haz un repositorio](#haz-un-repositorio)
@@ -34,6 +36,11 @@ Se pide resolver el problema, justificando tu solución y testear las operacione
 
 ## Hazlo en otros lenguajes
 Si quieres hacerlo en otros lenguajes, crea un directorio con el nombre del lenguaje y mete el proyecto de tu solución. Es importante que muestres que todo se testea a nivel unitario y usando algún mock. Una vez hecho hazme un pull-resuqetes y pasame el color del logo del lenguaje que quieres que salga en la cabecera ¿Te atreves? 😉
+
+### Lenguajes disponibles
+- [Kotlin](./kotlin/)
+- [Java](./java/)
+- [TypeScript](./typescript/)
 ## Acerca de
 
 Este ejercicio de clase, tiene como objetivo mostrar aspectos de programación para la realización de una prueba técnica.

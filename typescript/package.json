@@ -1,0 +1,42 @@
+{
+  "name": "ts-cola-prioritaria",
+  "version": "1.0.0",
+  "description": "Prueba técnica para la cola de prioridad",
+  "main": "/build/index.js",
+  "scripts": {
+    "dev": "tsc --watch",
+    "dev:watch": "nodemon",
+    "dev:run": "ts-node --files src/index.ts",
+    "build": "rimraf ./build && tsc",
+    "start": "npm run build && node build/index.js",
+    "lint": "eslint . --ext .ts",
+    "lint:fix": "eslint . --ext .ts --fix",
+    "test": "jest",
+    "test:sec": "jest --runInBand",
+    "test:coverage": "jest --coverage --runInBand",
+    "test:watch": "jest --watchAll"
+  },
+  "keywords": [
+    "TypeScript",
+    "NodeJS"
+  ],
+  "author": "joseluisgs",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/jest": "^28.1.4",
+    "@types/node": "^18.0.3",
+    "@types/supertest": "^2.0.12",
+    "@typescript-eslint/eslint-plugin": "^5.30.5",
+    "@typescript-eslint/parser": "^5.30.5",
+    "eslint": "^8.19.0",
+    "eslint-config-standard-with-typescript": "^22.0.0",
+    "eslint-plugin-import": "^2.26.0",
+    "jest": "^28.1.2",
+    "nodemon": "^2.0.19",
+    "rimraf": "^3.0.2",
+    "ts-jest": "^28.0.5",
+    "ts-node": "^10.8.2",
+    "typescript": "^4.7.4"
+  },
+  "dependencies": {}
+}
