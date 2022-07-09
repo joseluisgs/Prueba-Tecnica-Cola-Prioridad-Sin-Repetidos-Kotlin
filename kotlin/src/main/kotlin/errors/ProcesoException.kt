@@ -5,4 +5,4 @@ package errors
  * Si no queremos que se propaguen, podemos usar el try-catch
  * Si queremos que sean sin checked, debemos usar RuntimeException para heredar.
  */
-class ProcesoException(s: String) : Exception(s)
+class ProcesoException(message: String) : Exception(message)
