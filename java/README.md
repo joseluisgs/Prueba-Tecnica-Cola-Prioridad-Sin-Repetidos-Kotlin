@@ -1,7 +1,2 @@
-# Cola Prioritaria Sin Repetidos
-
-## Descripción
-
-Se realiza una cola de procesos en base a una prioridad descedenete en donde no puede haber dos elementos con el mismo
-id.
-
+# Cola con prioridad sin repetidos
+Ejemplo de cola con prioridad descendente sin repetidos en Java. Teasteado con JUnit y Mokito
