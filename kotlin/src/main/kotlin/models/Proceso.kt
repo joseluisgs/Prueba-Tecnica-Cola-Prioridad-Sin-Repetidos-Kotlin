@@ -24,15 +24,4 @@ data class Proceso(val id: Int, val nombre: String, var prioridad: Int = 1) {
             prioridad = 9
         }
     }
-
-    override fun equals(other: Any?): Boolean {
-        if (this === other) return true
-        other as Proceso?
-        if (other == null) return false
-        return id == other.id
-    }
-
-    override fun hashCode(): Int {
-        return id
-    }
 }

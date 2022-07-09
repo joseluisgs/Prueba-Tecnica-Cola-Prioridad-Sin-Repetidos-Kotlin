@@ -19,11 +19,13 @@ import models.Proceso
  */
 class ColaProcesoImp : ColaProceso {
     // Al ser un set, pues no admite elementos repetidos
-    private val cola = mutableSetOf<Proceso>()
+    private val cola = mutableListOf<Proceso>()
 
     override fun push(item: Proceso) {
-        val res = cola.add(item)
-        // println("Se ha agregado el proceso ${item.id} a la cola: $res")
+        // antes de insertar, comprobamos que no exista el proceso en base a u id
+        if (cola.none { it.id == item.id }) {
+            cola.add(item)
+        }
     }
 
     override fun pop(): Proceso? {

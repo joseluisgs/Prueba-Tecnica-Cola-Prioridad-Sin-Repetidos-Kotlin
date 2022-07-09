@@ -13,7 +13,7 @@ class ColaProcesoImp implements ColaProceso {
 
   public pop (): Proceso | undefined {
     if (this.cola.length > 0) {
-      // Obtenemos los ids
+      // Obtenemos las prioridades
       const prioridad = this.cola.map(proceso => {
         return proceso.prioridad
       })
