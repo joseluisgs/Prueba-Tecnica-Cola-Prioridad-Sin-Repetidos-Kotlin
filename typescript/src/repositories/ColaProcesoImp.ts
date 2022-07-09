@@ -4,11 +4,11 @@ import Proceso from '../models/Proceso'
 class ColaProcesoImp implements ColaProceso {
   private readonly cola: Proceso[] = []
 
-  push (item: Proceso): void {
+  public push (item: Proceso): void {
     this.cola.push(item)
   }
 
-  pop (): Proceso | undefined {
+  public pop (): Proceso | undefined {
     if (this.cola.length > 0) {
       // Obtenemos los ids
       const prioridad = this.cola.map(proceso => {
@@ -25,8 +25,20 @@ class ColaProcesoImp implements ColaProceso {
     return undefined
   }
 
-  isEmpty (): boolean {
+  public isEmpty (): boolean {
     return this.cola.length === 0
+  }
+
+  public size (): number {
+    return this.cola.length
+  }
+
+  public get (id: number): Proceso | undefined {
+    return this.cola.find(proceso => proceso.id === id)
+  }
+
+  public getAll (): Proceso[] {
+    return this.cola.sort((a, b) => a.prioridad - b.prioridad)
   }
 }
 

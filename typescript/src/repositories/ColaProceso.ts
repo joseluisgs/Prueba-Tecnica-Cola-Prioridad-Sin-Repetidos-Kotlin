@@ -2,9 +2,9 @@ import Cola from './Cola'
 import Proceso from '../models/Proceso'
 
 interface ColaProceso extends Cola<Proceso> {
-  push: (item: Proceso) => void
-  pop: () => Proceso | undefined
-  isEmpty: () => boolean
+  get: (id: number) => Proceso | undefined
+  getAll: () => Proceso[]
+  size: () => number
 }
 
 export default ColaProceso
