@@ -9,7 +9,20 @@ class ColaProcesoImp implements ColaProceso {
   }
 
   pop (): Proceso | undefined {
-    return this.cola.shift()
+    if (this.cola.length > 0) {
+      // Obtenemos los ids
+      const prioridad = this.cola.map(proceso => {
+        return proceso.prioridad
+      })
+      // Buscamos la maxima prioridad
+      const maxPrioridad = Math.max(...prioridad)
+      // Sacamos el primer proceso que lo cumple
+      const proceso = this.cola.find(proceso => proceso.prioridad === maxPrioridad) as Proceso
+      // Eliminamos el proceso de la cola
+      this.cola.splice(this.cola.indexOf(proceso), 1)
+      return proceso
+    }
+    return undefined
   }
 
   isEmpty (): boolean {
