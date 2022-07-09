@@ -5,7 +5,10 @@ class ColaProcesoImp implements ColaProceso {
   private readonly cola: Proceso[] = []
 
   public push (item: Proceso): void {
-    this.cola.push(item)
+    // Debemos comprobar que no existes para evitar repetidos por ids
+    if (this.cola.find(proceso => proceso.id === item.id) === undefined) {
+      this.cola.push(item)
+    }
   }
 
   public pop (): Proceso | undefined {
@@ -38,7 +41,7 @@ class ColaProcesoImp implements ColaProceso {
   }
 
   public getAll (): Proceso[] {
-    return this.cola.sort((a, b) => a.prioridad - b.prioridad)
+    return this.cola.sort((a, b) => b.prioridad - a.prioridad)
   }
 }
 
