@@ -10,10 +10,10 @@ import java.util.List;
  * Ejemplo de controlador de procesos
  * Se aplica Inyección de dependencias por constructor
  */
-public class PrcesosController {
+public class ProcesosController {
     ColaPrioritaria repositorio;
 
-    public PrcesosController(ColaPrioritaria repositorio) {
+    public ProcesosController(ColaPrioritaria repositorio) {
         this.repositorio = repositorio;
     }
 
@@ -38,6 +38,10 @@ public class PrcesosController {
         } else {
             return res;
         }
+    }
+
+    public boolean isEmpty() {
+        return repositorio.isEmpty();
     }
 
     public List<Proceso> getAll() {

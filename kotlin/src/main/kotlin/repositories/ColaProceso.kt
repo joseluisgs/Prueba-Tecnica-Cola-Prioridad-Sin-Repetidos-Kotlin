@@ -1,6 +1,7 @@
 package repositories
 
 import models.Proceso
+import tda.Cola
 
 /**
  * Aplico principio de Segregación de Interfaces

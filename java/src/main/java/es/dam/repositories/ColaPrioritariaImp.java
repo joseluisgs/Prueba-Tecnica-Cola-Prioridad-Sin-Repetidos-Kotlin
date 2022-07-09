@@ -2,6 +2,7 @@ package es.dam.repositories;
 
 import es.dam.models.Proceso;
 
+import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.HashSet;
 import java.util.List;
@@ -15,11 +16,14 @@ import java.util.stream.Collectors;
  * por si es mas eficiente usar un TreeSet con el orden prestablecido
  */
 public class ColaPrioritariaImp implements ColaPrioritaria {
-    HashSet<Proceso> items = new HashSet<>();
+    private List<Proceso> items = new ArrayList<>();
 
     @Override
     public void push(Proceso item) {
-        items.add(item);
+        // Comprobamos si el elemento ya existe en base a su id
+        if (items.stream().noneMatch(p -> p.getId() == item.getId())) {
+            items.add(item);
+        }
     }
 
     @Override
@@ -33,11 +37,6 @@ public class ColaPrioritariaImp implements ColaPrioritaria {
         return items.stream().max(Comparator.comparingInt(Proceso::getPrioridad)).orElse(null);
     }
 
-    @Override
-    public Proceso first() {
-        var res = getMax();
-        return res;
-    }
 
     @Override
     public boolean isEmpty() {

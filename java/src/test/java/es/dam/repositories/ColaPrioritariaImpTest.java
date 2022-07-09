@@ -20,7 +20,7 @@ class ColaPrioritariaImpTest {
 
         repository.push(p1);
         var res1 = repository.size();
-        var item = repository.first();
+        var item = repository.pop();
         assertAll(
                 () -> assertEquals(1, res1),
                 () -> assertEquals(p1, item),
@@ -38,7 +38,7 @@ class ColaPrioritariaImpTest {
         repository.push(p1);
         repository.push(p2);
         var res1 = repository.size();
-        var item = repository.first();
+        var item = repository.pop();
         assertAll(
                 () -> assertEquals(1, res1),
                 () -> assertEquals(p1, item),
@@ -64,24 +64,6 @@ class ColaPrioritariaImpTest {
                 () -> assertEquals(p1.getPrioridad(), item.getPrioridad())
 
 
-        );
-    }
-
-    @Test
-    void first() {
-        var p1 = new Proceso(1, "p1", 1);
-        var p2 = new Proceso(2, "p2", 6);
-
-        repository.push(p1);
-        repository.push(p2);
-
-        var res = repository.first();
-
-        assertAll(
-                () -> assertNotEquals(p2, null),
-                () -> assertEquals(p2, res),
-                () -> assertEquals(p2.getId(), res.getId()),
-                () -> assertEquals(p2.getPrioridad(), res.getPrioridad())
         );
     }
 
@@ -119,7 +101,7 @@ class ColaPrioritariaImpTest {
 
     @Test
     void firstVacio() {
-        var res = repository.first();
+        var res = repository.pop();
         assertNull(res);
     }
 
@@ -161,6 +143,9 @@ class ColaPrioritariaImpTest {
 
         var res1 = repository.getById(p1.getId());
         var res2 = repository.getById(p2.getId());
+
+        System.out.println(res1);
+        System.out.println(res2);
 
         assertAll(
                 () -> assertNotEquals(p2, null),

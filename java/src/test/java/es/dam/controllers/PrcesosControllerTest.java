@@ -20,7 +20,7 @@ class PrcesosControllerTest {
     private ColaPrioritaria repositorio;
 
     @InjectMocks
-    private PrcesosController controller;
+    private ProcesosController controller;
 
     @Test
     void push() {
