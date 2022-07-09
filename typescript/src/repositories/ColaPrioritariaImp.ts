@@ -1,7 +1,7 @@
-import ColaProceso from './ColaProceso'
+import ColaPrioritaria from './ColaPrioritaria'
 import Proceso from '../models/Proceso'
 
-class ColaProcesoImp implements ColaProceso {
+class ColaPrioritariaImp implements ColaPrioritaria {
   private readonly cola: Proceso[] = []
 
   public push (item: Proceso): void {
@@ -36,7 +36,7 @@ class ColaProcesoImp implements ColaProceso {
     return this.cola.length
   }
 
-  public get (id: number): Proceso | undefined {
+  public getById (id: number): Proceso | undefined {
     return this.cola.find(proceso => proceso.id === id)
   }
 
@@ -45,4 +45,4 @@ class ColaProcesoImp implements ColaProceso {
   }
 }
 
-export default ColaProcesoImp
+export default ColaPrioritariaImp

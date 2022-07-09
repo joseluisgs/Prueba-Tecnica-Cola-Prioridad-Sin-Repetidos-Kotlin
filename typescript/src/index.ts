@@ -2,15 +2,15 @@
 import Calc from './calc'
 import ProcesosController from './controllers/ProcesosController'
 import Proceso from './models/Proceso'
-import ColaProceso from './repositories/ColaProceso'
-import ColaProcesoImp from './repositories/ColaProcesoImp'
+import ColaPrioritaria from './repositories/ColaPrioritaria'
+import ColaPrioritariaImp from './repositories/ColaPrioritariaImp'
 
 console.log('Hello World')
 const calc = new Calc()
 console.log(calc.add(1, 2))
 
 console.log('Hola Cola con Prioridad sin Repetidos')
-const cola: ColaProceso = new ColaProcesoImp()
+const cola: ColaPrioritaria = new ColaPrioritariaImp()
 
 cola.push(new Proceso(1, 'Proceso 1', 1))
 cola.push(new Proceso(2, 'Proceso 2', 2))
@@ -38,7 +38,7 @@ while (!cola.isEmpty()) {
 
 // Jugamos con el controlador
 console.log('Jugando con el controlador')
-const controlador = new ProcesosController(new ColaProcesoImp())
+const controlador = new ProcesosController(new ColaPrioritariaImp())
 
 console.log('Metiendo procesos')
 controlador.push(new Proceso(1, 'Proceso 1', 8))
@@ -46,8 +46,8 @@ controlador.push(new Proceso(2, 'Proceso 2', 2))
 controlador.push(new Proceso(3, 'Proceso 3', 3))
 
 console.log('Obteniendo Procesos')
-console.log('Obteniendo proceso con id 1:', controlador.get(1))
-console.log('Obteniendo proceso con id 3:', controlador.get(3))
+console.log('Obteniendo proceso con id 1:', controlador.getById(1))
+console.log('Obteniendo proceso con id 3:', controlador.getById(3))
 
 console.log('Obteniendo todos Procesos')
 controlador.getAll().forEach(proceso => console.log(proceso))
@@ -65,7 +65,7 @@ try {
 }
 
 try {
-  console.log(controlador.get(1))
+  console.log(controlador.getById(1))
 } catch (e) {
   console.log(`Error: ${e}`)
 }

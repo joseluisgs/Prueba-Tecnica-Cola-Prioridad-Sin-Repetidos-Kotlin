@@ -1,11 +1,11 @@
 import Proceso from '../models/Proceso'
-import ColaProceso from '../repositories/ColaProceso'
+import ColaPrioritaria from '../repositories/ColaPrioritaria'
 import ProcesosException from '../errors/ProcesosException'
 
 class ProcesosController {
-  private readonly cola: ColaProceso
+  private readonly cola: ColaPrioritaria
 
-  constructor (cola: ColaProceso) {
+  constructor (cola: ColaPrioritaria) {
     this.cola = cola
   }
 
@@ -13,8 +13,8 @@ class ProcesosController {
     this.cola.push(proceso)
   }
 
-  public get (id: number): Proceso {
-    const proceso = this.cola.get(id)
+  public getById (id: number): Proceso {
+    const proceso = this.cola.getById(id)
     if (proceso != null) {
       return proceso
     }
