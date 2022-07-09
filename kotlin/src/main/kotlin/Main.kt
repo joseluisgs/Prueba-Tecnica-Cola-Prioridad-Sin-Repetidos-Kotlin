@@ -1,6 +1,6 @@
 import controllers.ProcesosController
 import models.Proceso
-import repositories.ColaProcesoImp
+import repositories.ColaPrioritariaImp
 
 /**
  * Main de Ejemplo, no es necesario para el proyecto, pues con los test es suficiente
@@ -8,7 +8,7 @@ import repositories.ColaProcesoImp
 fun main() {
     println("Hola Cola con Prioridad sin Repetidos")
     // Voy a meter valores
-    val cola = ColaProcesoImp()
+    val cola = ColaPrioritariaImp()
     cola.push(Proceso(1, "Proceso 1", 1))
     cola.push(Proceso(2, "Proceso 2", 2))
     cola.push(Proceso(3, "Proceso 3", 3))
@@ -36,15 +36,15 @@ fun main() {
 
     // Jugamos con el controlador
     println("Jugando con el controlador")
-    val controlador = ProcesosController(ColaProcesoImp())
+    val controlador = ProcesosController(ColaPrioritariaImp())
     println("Metiendo procesos")
     controlador.push(Proceso(1, "Proceso 1", 8))
     controlador.push(Proceso(2, "Proceso 2", 2))
     controlador.push(Proceso(3, "Proceso 3", 3))
 
     println("Obteniendo Procesos")
-    println("Proceso con id 1: ${controlador.get(1)}")
-    println("Proceso con id 3: ${controlador.get(3)}")
+    println("Proceso con id 1: ${controlador.getById(1)}")
+    println("Proceso con id 3: ${controlador.getById(3)}")
 
     println("Obteniendo todos Procesos")
     controlador.getAll().forEach { println(it) }
@@ -62,7 +62,7 @@ fun main() {
     }
 
     try {
-        println(controlador.get(1))
+        println(controlador.getById(1))
     } catch (e: Exception) {
         println("Error: ${e.message}")
     }

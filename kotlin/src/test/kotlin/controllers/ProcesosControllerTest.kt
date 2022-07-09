@@ -11,7 +11,7 @@ import org.junit.jupiter.api.Test
 import org.junit.jupiter.api.assertAll
 import org.junit.jupiter.api.assertThrows
 import org.junit.jupiter.api.extension.ExtendWith
-import repositories.ColaProceso
+import repositories.ColaPrioritaria
 
 /**
  * No es necesario, pero lo he hecho para usar Mockito
@@ -22,7 +22,7 @@ import repositories.ColaProceso
 // @TestInstance(TestInstance.Lifecycle.PER_CLASS) // BeforeAll y AfterAll
 internal class ProcesosControllerTest {
     @MockK
-    lateinit var repository: ColaProceso
+    lateinit var repository: ColaPrioritaria
 
     @InjectMockKs
     lateinit var controller: ProcesosController
@@ -92,9 +92,9 @@ internal class ProcesosControllerTest {
     fun get() {
         val p1 = Proceso(1, "Proceso 1", 6)
 
-        every { repository.get(p1.id) } returns p1
+        every { repository.getById(p1.id) } returns p1
 
-        val res = controller.get(p1.id)
+        val res = controller.getById(p1.id)
 
         assertAll(
             { assert(res == p1) },
@@ -103,7 +103,7 @@ internal class ProcesosControllerTest {
             { assert(res.prioridad == p1.prioridad) },
         )
 
-        verify(atLeast = 1) { repository.get(p1.id) }
+        verify(atLeast = 1) { repository.getById(p1.id) }
     }
 
     @Test
@@ -138,15 +138,15 @@ internal class ProcesosControllerTest {
     @Test
     fun getNoExiste() {
         val id = 1
-        every { repository.get(id) } returns null
+        every { repository.getById(id) } returns null
 
         val ex = assertThrows<ProcesoException> {
-            val res = controller.get(id)
+            val res = controller.getById(id)
         }
 
         assert(ex.message == "No existe el proceso con id $id")
 
-        verify(atLeast = 1) { repository.get(id) }
+        verify(atLeast = 1) { repository.getById(id) }
     }
 
     @Test

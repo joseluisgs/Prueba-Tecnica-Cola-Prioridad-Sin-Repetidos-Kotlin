@@ -5,12 +5,12 @@ import org.junit.jupiter.api.BeforeEach
 import org.junit.jupiter.api.Test
 import org.junit.jupiter.api.assertAll
 
-internal class ColaProcesoImpTest {
-    private lateinit var cola: ColaProceso
+internal class ColaPrioritariaImpTest {
+    private lateinit var cola: ColaPrioritaria
 
     @BeforeEach
     fun setUp() {
-        cola = ColaProcesoImp()
+        cola = ColaPrioritariaImp()
     }
 
     @Test
@@ -18,8 +18,8 @@ internal class ColaProcesoImpTest {
         cola.push(Proceso(1, "Proceso 1", 1))
         cola.push(Proceso(2, "Proceso 2", 2))
 
-        val p1 = cola.get(1)
-        val p2 = cola.get(2)
+        val p1 = cola.getById(1)
+        val p2 = cola.getById(2)
         assertAll(
             { assert(cola.size == 2) },
             { assert(p1?.id == 1) },
@@ -36,8 +36,8 @@ internal class ColaProcesoImpTest {
         cola.push(Proceso(1, "Proceso 1", 1))
         cola.push(Proceso(1, "Proceso 1", 6))
 
-        val p1 = cola.get(1)
-        val p2 = cola.get(2)
+        val p1 = cola.getById(1)
+        val p2 = cola.getById(2)
         assertAll(
             { assert(cola.size == 1) },
             { assert(p1?.id == 1) },
@@ -94,8 +94,8 @@ internal class ColaProcesoImpTest {
         cola.push(Proceso(1, "Proceso 1", 1))
         cola.push(Proceso(2, "Proceso 2", 2))
 
-        val p1 = cola.get(1)
-        val p2 = cola.get(2)
+        val p1 = cola.getById(1)
+        val p2 = cola.getById(2)
 
         assertAll(
             { assert(p1?.id == 1) },
@@ -112,7 +112,7 @@ internal class ColaProcesoImpTest {
         cola.push(Proceso(1, "Proceso 1", 1))
         cola.push(Proceso(2, "Proceso 2", 2))
 
-        var res = cola.get(3)
+        var res = cola.getById(3)
 
         assert(res == null)
     }

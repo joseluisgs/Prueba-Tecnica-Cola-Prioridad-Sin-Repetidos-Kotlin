@@ -17,7 +17,7 @@ import models.Proceso
  * También podemos usar mapas o listas. Cualquier TDA es bueno si lo razonamos.
  * Aplica operaciones sobre colecciones ya sean funcionales para procesar datos
  */
-class ColaProcesoImp : ColaProceso {
+class ColaPrioritariaImp : ColaPrioritaria {
     // Al ser un set, pues no admite elementos repetidos
     private val cola = mutableListOf<Proceso>()
 
@@ -44,7 +44,7 @@ class ColaProcesoImp : ColaProceso {
     override val size: Int
         get() = cola.size
 
-    override fun get(id: Int): Proceso? {
+    override fun getById(id: Int): Proceso? {
         return cola.find { it.id == id }
     }
 

@@ -2,21 +2,21 @@ package controllers
 
 import errors.ProcesoException
 import models.Proceso
-import repositories.ColaProceso
+import repositories.ColaPrioritaria
 
 /**
  * Esto no es obligatorio, solo lo uso para usar Mockito y puedeas ver una forma de testear
  * Lo ideal es solo hacer la cola
  * Aplico Inyección de Dependencias por constructor
  */
-class ProcesosController(private val procesos: ColaProceso) {
+class ProcesosController(private val procesos: ColaPrioritaria) {
 
     fun push(proceso: Proceso) {
         procesos.push(proceso)
     }
 
-    fun get(id: Int): Proceso {
-        return procesos.get(id) ?: throw ProcesoException("No existe el proceso con id $id")
+    fun getById(id: Int): Proceso {
+        return procesos.getById(id) ?: throw ProcesoException("No existe el proceso con id $id")
     }
 
     fun pop(): Proceso {
