@@ -1,21 +1,8 @@
-import { describe, test, assert, beforeEach, afterEach, expect } from 'vitest'
-import ColaPrioritariaImp from '../../src/repositories/ColaPrioritariaImp'
+import { describe, test, assert, beforeEach, afterEach, expect, vi } from 'vitest'
 import Proceso from '../../src/models/Proceso'
 import ProcesosController from '../../src/controllers/ProcesosController'
+import ColaPrioritariaImp from '../../src/repositories/ColaPrioritariaImp'
 import ProcesosException from '../../src/errors/ProcesosException'
-
-// definimos mock
-// vi.mock('./../src/repositories/ColaPrioritariaImp', () => {
-//   const ColaPrioritariaImp = vi.fn(() => ({
-//     push: vi.fn(),
-//     pop: vi.fn(),
-//     isEmpty: vi.fn(),
-//     getById: vi.fn(),
-//     getAll: vi.fn(),
-//     size: vi.fn(),
-//   }))
-//   return { ColaPrioritariaImp }
-// })
 
 // Lo voy a hacer sin Mocks por ahora
 // Describimos la suite
@@ -93,7 +80,7 @@ describe('Suite de test de Controlador de Procesos', () => {
     assert.isFalse(res)
   })
 
-  test('debería obtener una excepcion si proceso no existe al consultar', () => {
+  test('debería obtener una excepción si proceso no existe al consultar', () => {
     const res = assert.throws(() => {
       procesosController.getById(1)
     }, ProcesosException) as unknown as ProcesosException
@@ -101,7 +88,7 @@ describe('Suite de test de Controlador de Procesos', () => {
     assert.equal(res.message, 'No existe el proceso con id 1')
   })
 
-  test('debería obtener una excepcion si proceso no existe al extraer', () => {
+  test('debería obtener una excepción si proceso no existe al extraer', () => {
     const res = assert.throws(() => {
       procesosController.pop()
     }, ProcesosException) as unknown as ProcesosException
