@@ -6,7 +6,7 @@ class ColaPrioritariaImp implements ColaPrioritaria {
 
   public push(item: Proceso): void {
     // Debemos comprobar que no existes para evitar repetidos por ids
-    if (this.cola.find(proceso => proceso.id === item.id) === undefined) {
+    if (this.cola.find((proceso) => proceso.id === item.id) === undefined) {
       this.cola.push(item)
     }
   }
@@ -14,13 +14,13 @@ class ColaPrioritariaImp implements ColaPrioritaria {
   public pop(): Proceso | undefined {
     if (this.cola.length > 0) {
       // Obtenemos las prioridades
-      const prioridad = this.cola.map(proceso => {
+      const prioridad = this.cola.map((proceso) => {
         return proceso.prioridad
       })
       // Buscamos la maxima prioridad
       const maxPrioridad = Math.max(...prioridad)
       // Sacamos el primer proceso que lo cumple
-      const proceso = this.cola.find(proceso => proceso.prioridad === maxPrioridad) as Proceso
+      const proceso = this.cola.find((proceso) => proceso.prioridad === maxPrioridad) as Proceso
       // Eliminamos el proceso de la cola
       this.cola.splice(this.cola.indexOf(proceso), 1)
       return proceso
@@ -37,7 +37,7 @@ class ColaPrioritariaImp implements ColaPrioritaria {
   }
 
   public getById(id: number): Proceso | undefined {
-    return this.cola.find(proceso => proceso.id === id)
+    return this.cola.find((proceso) => proceso.id === id)
   }
 
   public getAll(): Proceso[] {

@@ -1,13 +1,8 @@
 /* eslint-disable @typescript-eslint/restrict-template-expressions */
-import Calc from './calc'
 import ProcesosController from './controllers/ProcesosController'
 import Proceso from './models/Proceso'
 import ColaPrioritaria from './repositories/ColaPrioritaria'
 import ColaPrioritariaImp from './repositories/ColaPrioritariaImp'
-
-console.log('Hello World')
-const calc = new Calc()
-console.log(calc.add(1, 2))
 
 console.log('Hola Cola con Prioridad sin Repetidos')
 const cola: ColaPrioritaria = new ColaPrioritariaImp()
@@ -50,7 +45,7 @@ console.log('Obteniendo proceso con id 1:', controlador.getById(1))
 console.log('Obteniendo proceso con id 3:', controlador.getById(3))
 
 console.log('Obteniendo todos Procesos')
-controlador.getAll().forEach(proceso => console.log(proceso))
+controlador.getAll().forEach((proceso) => console.log(proceso))
 
 console.log('Sacando Procesos')
 while (controlador.isEmpty()) {
