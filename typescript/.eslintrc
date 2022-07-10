@@ -1,21 +1,18 @@
 {
   "root": true,
-  "extends": [
-    "standard-with-typescript",
-    "plugin:prettier/recommended"
-  ],
+  "extends": ["standard-with-typescript", "plugin:prettier/recommended"],
   "parserOptions": {
     "project": "./tsconfig.json"
   },
-   "rules": {
+  "rules": {
     "prettier/prettier": "error",
-      "max-len": [
-        "error",
-        {
-          "code": 180,
-          "comments": 180
-        }
-      ],
-      "no-console": "off"
-   }
+    "max-len": [
+      "error",
+      {
+        "code": 180,
+        "comments": 180
+      }
+    ],
+    "no-console": "off"
+  }
 }

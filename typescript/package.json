@@ -9,17 +9,11 @@
     "dev:run": "ts-node --files src/index.ts",
     "build": "rimraf ./build && tsc",
     "start": "npm run build && node build/index.js",
-    "format": "prettier-standard --format",
+    "format": "prettier --write 'src/**/*.*'",
     "lint": "eslint . --ext .ts",
     "lint:fix": "eslint . --ext .ts --fix",
     "test": "vitest",
-    "test:coverage": "vitest run --coverage",
-    "precommit": "lint-staged"
-  },
-  "lint-staged": {
-    "*": [
-      "prettier-standard --lint"
-    ]
+    "test:coverage": "vitest run --coverage"
   },
   "keywords": [
     "TypeScript",

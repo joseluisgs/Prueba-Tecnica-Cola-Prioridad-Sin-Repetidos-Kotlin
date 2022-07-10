@@ -3,7 +3,6 @@ import ColaPrioritariaImp from '../../src/repositories/ColaPrioritariaImp'
 import Proceso from '../../src/models/Proceso'
 import ProcesosController from '../../src/controllers/ProcesosController'
 import ProcesosException from '../../src/errors/ProcesosException'
-import { copyFileSync } from 'fs'
 
 // definimos mock
 // vi.mock('./../src/repositories/ColaPrioritariaImp', () => {
@@ -18,6 +17,7 @@ import { copyFileSync } from 'fs'
 //   return { ColaPrioritariaImp }
 // })
 
+// Lo voy a hacer sin Mocks por ahora
 // Describimos la suite
 describe('Suite de test de Controlador de Procesos', () => {
   let colaPrioritaria: ColaPrioritariaImp
@@ -96,16 +96,16 @@ describe('Suite de test de Controlador de Procesos', () => {
   test('debería obtener una excepcion si proceso no existe al consultar', () => {
     const res = assert.throws(() => {
       procesosController.getById(1)
-    }, ProcesosException)
+    }, ProcesosException) as unknown as ProcesosException
 
-    assert.isTrue(res.message.includes('No existe el proceso'))
+    assert.equal(res.message, 'No existe el proceso con id 1')
   })
 
   test('debería obtener una excepcion si proceso no existe al extraer', () => {
     const res = assert.throws(() => {
       procesosController.pop()
-    }, ProcesosException)
+    }, ProcesosException) as unknown as ProcesosException
 
-    assert.isTrue(res.message.includes('No existe el proceso'))
+    assert.equal(res.message, 'No existe el procesos o la cola esta vacía')
   })
 })
