@@ -15,6 +15,7 @@ Ejemplo de una prueba técnica Junior aplicable a cualquier lenguaje.
 
 - [Prueba Técnica Cola Prioridad Sin Repetidos](#prueba-técnica-cola-prioridad-sin-repetidos)
   - [El problema](#el-problema)
+    - [Una variación del problema](#una-variación-del-problema)
   - [Hazlo en otros lenguajes](#hazlo-en-otros-lenguajes)
     - [Lenguajes disponibles](#lenguajes-disponibles)
   - [Acerca de](#acerca-de)
@@ -29,13 +30,18 @@ Ejemplo de una prueba técnica Junior aplicable a cualquier lenguaje.
   - [Licencia](#licencia)
 
 ## El problema
-Tenemos un proceso, que tiene un identificador, un nombre y una prioridad. 
-Queremos manejar una cola de prioridad, sin repetidos. Sabremos que un elemento es repetido si tiene el mismo id. La prioridad es de 1 a 9 siendo 9 la más alta.
-Por otro lado queremos un controlador que nos centralice el proceso de acceso a la cola.
-Se pide resolver el problema, justificando tu solución y testear las operaciones críticas a nivel de la cola y controlador.
+Tenemos un **proceso**, que tiene un identificador, un nombre y una prioridad (1-9). 
+Queremos manejar una **cola de prioridad, sin repetidos**. Sabremos que un elemento es repetido si tiene el mismo id. **La prioridad es de 1 a 9 siendo 9 la más alta**.
+Debemos tener en cuenta que **si un proceso ya existe no se puede insertar**.
+Por otro lado queremos un **controlador que nos centralice el proceso de manejar la cola**.
+Al **sacar el primer proceso de la cola (se obtiene y se elimina, porque es una cola) o mostrarlos ordenados, siempre es por prioridad descendente**, de más a menos.
+Se pide resolver el problema, justificando tu solución (diseño, patrones, técnicas de programación usadas) y testear las operaciones críticas a nivel de la cola y controlador.
+
+### Una variación del problema
+Puedes hacer una variación, es que si el proceso existe se deben actualizar sus datos. (Esto te lo dejo a ti 💪)
 
 ## Hazlo en otros lenguajes
-Si quieres hacerlo en otros lenguajes, crea un directorio con el nombre del lenguaje y mete el proyecto de tu solución. Es importante que muestres que todo se testea a nivel unitario y usando algún mock. Una vez hecho hazme un pull-resuqetes y pasame el color del logo del lenguaje que quieres que salga en la cabecera ¿Te atreves? 😉
+Si quieres hacerlo en otros lenguajes, crea un directorio con el nombre del lenguaje y mete el proyecto de tu solución. Es importante que muestres que todo se testea a nivel unitario y usando algún mock. Una vez hecho hazme un pull-request y pásame el color del logo del lenguaje que quieres que salga en la cabecera ¿Te atreves? 😉
 
 ### Lenguajes disponibles
 - [Kotlin](./kotlin/)
@@ -48,7 +54,7 @@ Este ejercicio de clase, tiene como objetivo mostrar aspectos de programación p
 La idea principal es que puedas resolverlo con cualquier lenguaje de programación. Pero son los sutiles detalles lo que
 marcan la diferencia.
 Hay infinitas soluciones. Aunque está centrada en Kotlin, parcialmente tienes un directorio con la solución parcialmente
-en Java vista en clase.
+en Java vista en clase al igual que otros lenguajes.
 Aunque lo importante es que puedas resolverlo con cualquier lenguaje de programación y sigas los pasos indicados siempre
 que puedas.
 No es tanto el qué resuelvas si no el cómo lo resuelvas y lo que expliques, comentarios o técnicas que utilices.
@@ -60,7 +66,7 @@ Te dejo algunos consejos.
 Hazte un esquema de cómo vas a sacar la solución. Abrir el IDE y picar sin ton ni son aunque lo tengas claro no ayuda.
 Empezar a escribir, borrar, corregir, borrar, cambiar, noe stá muy bien visto.
 
-5 minutos de diseño, ayudan a más de una hora de programación.
+5 minutos de diseño, ayudan a más de una hora de programación: patrones, diseño, SOLID, prueba a realizar.
 
 ## Haz un repositorio
 
@@ -105,8 +111,7 @@ Finalmente, haz un README.md con todo lo que has hecho y justificando tus elecci
 
 ## Tiempo
 
-Piensa que el tiempo no es infinito, esto no te debería llevar las de 75 minutos y mucho me parece :)
-Intenta no pasar más de 60 minutos. Si no lo consigues, no te preocupes, puedes volver a empezar y seguir practicando.
+Piensa que el tiempo no es infinito, esto no te debería llevar más de 60 minutos. Intenta no pasar más de 60 minutos. Si no lo consigues, no te preocupes, puedes volver a empezar y seguir practicando.
 
 
 ## Autor
