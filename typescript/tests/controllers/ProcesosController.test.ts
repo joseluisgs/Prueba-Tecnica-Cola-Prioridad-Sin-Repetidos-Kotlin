@@ -1,9 +1,9 @@
 import { describe, test, assert, beforeEach, afterEach, expect, vi } from 'vitest'
 import Proceso from '../../src/models/Proceso'
 import ProcesosController from '../../src/controllers/ProcesosController'
-import ColaPrioritaria from '../../src/repositories/ColaPrioritaria'
 import ProcesosException from '../../src/errors/ProcesosException'
 import { ColaPrioritariaImp } from '../../src/repositories/ColaPrioritariaImp'
+import ColaPrioritaria from '../../src/repositories/ColaPrioritaria'
 
 // Programamos el mock por defecto que queremos y la implementación de sus métodos
 // para no tener que escribir código de prueba en todos, solo en los específicos
@@ -20,7 +20,7 @@ vi.mock('../../src/repositories/ColaPrioritariaImp', () => {
 })
 
 describe('Suite de test de Controlador de Procesos Mock Repositorio Cola Prioritaria', () => {
-  let colaPrioritaria: ColaPrioritariaImp
+  let colaPrioritaria: ColaPrioritaria
   let procesosController: ProcesosController
 
   beforeEach(() => {
