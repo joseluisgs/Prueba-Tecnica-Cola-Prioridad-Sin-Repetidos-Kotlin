@@ -3,27 +3,21 @@ import Proceso from '../../src/models/Proceso'
 import ProcesosController from '../../src/controllers/ProcesosController'
 import ColaPrioritaria from '../../src/repositories/ColaPrioritaria'
 import ProcesosException from '../../src/errors/ProcesosException'
-// import ColaPrioritariaImp from '../../src/repositories/ColaPrioritariaImp'
+import { ColaPrioritariaImp } from '../../src/repositories/ColaPrioritariaImp'
 
-// Creamos nuestro objeto de mock completo de Cola Prioritaria
-const ColaPrioritariaImp = vi.fn(() => ({
-  getAll: vi.fn(() => [new Proceso(2, 'proceso 2', 2), new Proceso(1, 'proceso 1', 1)]),
-  size: vi.fn(() => 2),
-  push: vi.fn(),
-  pop: vi.fn(() => new Proceso(1, 'proceso 1', 1)),
-  isEmpty: vi.fn(() => false),
-  getById: vi.fn(() => new Proceso(1, 'proceso 1', 1)),
-}))
-
-// Creamos nuestro objeto de mock completo de Cola Prioritaria con los casos "raros"
-const ColaPrioritariaImpErr = vi.fn(() => ({
-  getAll: vi.fn(() => []),
-  size: vi.fn(() => 0),
-  push: vi.fn(),
-  pop: vi.fn(() => undefined),
-  isEmpty: vi.fn(() => true),
-  getById: vi.fn(() => undefined),
-}))
+// Programamos el mock por defecto que queremos y la implementación de sus métodos
+// para no tener que escribir código de prueba en todos, solo en los específicos
+vi.mock('../../src/repositories/ColaPrioritariaImp', () => {
+  const ColaPrioritariaImp = vi.fn(() => ({
+    getAll: vi.fn(() => [new Proceso(2, 'proceso 2', 2), new Proceso(1, 'proceso 1', 1)]),
+    size: vi.fn(() => 2),
+    push: vi.fn(),
+    pop: vi.fn(() => new Proceso(1, 'proceso 1', 1)),
+    isEmpty: vi.fn(() => false),
+    getById: vi.fn(() => new Proceso(1, 'proceso 1', 1)),
+  }))
+  return { ColaPrioritariaImp }
+})
 
 describe('Suite de test de Controlador de Procesos Mock Repositorio Cola Prioritaria', () => {
   let colaPrioritaria: ColaPrioritaria
@@ -81,8 +75,9 @@ describe('Suite de test de Controlador de Procesos Mock Repositorio Cola Priorit
   })
 
   test('debería saber si la cola está vacía', () => {
-    colaPrioritaria = new ColaPrioritariaImpErr()
-    procesosController = new ProcesosController(colaPrioritaria)
+    // Cambio la función por defecto del mock, por la específica
+    colaPrioritaria.isEmpty = vi.fn(() => true)
+
     const res = procesosController.isEmpty()
 
     expect(colaPrioritaria.isEmpty).toBeCalledTimes(1)
@@ -90,8 +85,8 @@ describe('Suite de test de Controlador de Procesos Mock Repositorio Cola Priorit
   })
 
   test('debería obtener una excepción si proceso no existe al consultar', () => {
-    colaPrioritaria = new ColaPrioritariaImpErr()
-    procesosController = new ProcesosController(colaPrioritaria)
+    // Cambio la función por defecto del mock, por la específica
+    colaPrioritaria.getById = vi.fn(() => undefined)
 
     const res = assert.throws(() => {
       procesosController.getById(1)
@@ -103,8 +98,8 @@ describe('Suite de test de Controlador de Procesos Mock Repositorio Cola Priorit
   })
 
   test('debería obtener una excepción si proceso no existe al extraer', () => {
-    colaPrioritaria = new ColaPrioritariaImpErr()
-    procesosController = new ProcesosController(colaPrioritaria)
+    // Cambio la función por defecto del mock
+    colaPrioritaria.pop = vi.fn(() => undefined)
 
     const res = assert.throws(() => {
       procesosController.pop()

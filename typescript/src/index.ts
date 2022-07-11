@@ -2,7 +2,7 @@
 import ProcesosController from './controllers/ProcesosController'
 import Proceso from './models/Proceso'
 import ColaPrioritaria from './repositories/ColaPrioritaria'
-import ColaPrioritariaImp from './repositories/ColaPrioritariaImp'
+import { ColaPrioritariaImp } from './repositories/ColaPrioritariaImp'
 
 console.log('Hola Cola con Prioridad sin Repetidos')
 const cola: ColaPrioritaria = new ColaPrioritariaImp()

@@ -45,4 +45,5 @@ class ColaPrioritariaImp implements ColaPrioritaria {
   }
 }
 
-export default ColaPrioritariaImp
+// En vez de como Export default voy a exportarlo con un export nombrado
+export { ColaPrioritariaImp }

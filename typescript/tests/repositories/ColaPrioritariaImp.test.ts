@@ -1,5 +1,5 @@
 import { describe, test, assert, beforeEach } from 'vitest'
-import ColaPrioritariaImp from '../../src/repositories/ColaPrioritariaImp'
+import { ColaPrioritariaImp } from '../../src/repositories/ColaPrioritariaImp'
 import ColaPrioritaria from '../../src/repositories/ColaPrioritaria'
 import Proceso from '../../src/models/Proceso'
 
