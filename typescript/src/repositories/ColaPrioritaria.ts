@@ -1,4 +1,4 @@
-import Cola from './Cola'
+import Cola from '../tda/Cola'
 import Proceso from '../models/Proceso'
 
 interface ColaPrioritaria extends Cola<Proceso> {

@@ -20,7 +20,7 @@ vi.mock('../../src/repositories/ColaPrioritariaImp', () => {
 })
 
 describe('Suite de test de Controlador de Procesos Mock Repositorio Cola Prioritaria', () => {
-  let colaPrioritaria: ColaPrioritaria
+  let colaPrioritaria: ColaPrioritariaImp
   let procesosController: ProcesosController
 
   beforeEach(() => {
