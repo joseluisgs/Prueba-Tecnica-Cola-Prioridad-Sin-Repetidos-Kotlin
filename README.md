@@ -41,7 +41,11 @@ Se pide resolver el problema, justificando tu solución (diseño, patrones, téc
 Puedes hacer una variación, es que si el proceso existe se deben actualizar sus datos. (Esto te lo dejo a ti 💪)
 
 ## Hazlo en otros lenguajes
-Si quieres hacerlo en otros lenguajes, crea un directorio con el nombre del lenguaje y mete el proyecto de tu solución. Es importante que muestres que todo se testea a nivel unitario y usando algún mock. Una vez hecho hazme un pull-request y pásame el color del logo del lenguaje que quieres que salga en la cabecera ¿Te atreves? 😉
+Si quieres hacerlo en otros lenguajes, crea un directorio con el nombre del lenguaje y mete el proyecto de tu solución. Si ya está el directorio, me avisas y vemos como solucionamos o hacemos distintas soluciones para el problema.
+
+Es importante que muestres que todo se testea a nivel unitario y usando algún mock. 
+
+Una vez hecho hazme un **pull-request** y pásame el color del logo del lenguaje que quieres que salga en la cabecera ¿Te atreves? 😉
 
 ### Lenguajes disponibles
 - [Kotlin](./kotlin/)
