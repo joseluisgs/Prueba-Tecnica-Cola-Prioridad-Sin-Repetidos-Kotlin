@@ -5,6 +5,7 @@ Ejemplo de una prueba técnica Junior aplicable a cualquier lenguaje.
 [![Kotlin](https://img.shields.io/badge/Code-Kotlin-blueviolet)](https://kotlinlang.org/)
 [![Java](https://img.shields.io/badge/Code-Java-red)](https://java.org/)
 [![TypeScript](https://img.shields.io/badge/Code-TypeScript-blue)](https://www.typescriptlang.org/)
+[![Kotlin-js](https://img.shields.io/badge/Code-KotlinJS-blueviolet)](https://kotlinlang.org/)
 [![LISENCE](https://img.shields.io/badge/Lisence-MIT-%23e64545)](https://joseluisgs.github.io/docs/license/)
 ![GitHub](https://img.shields.io/github/last-commit/joseluisgs/Prueba-Tecnica-Cola-Prioridad-Sin-Repetidos-Kotlin)
 
@@ -51,6 +52,7 @@ Una vez hecho hazme un **pull-request** y pásame el color del logo del lenguaje
 - [Kotlin](./kotlin/)
 - [Java](./java/)
 - [TypeScript](./typescript/)
+- [KotlinJS](./kotlin-js/)
 ## Acerca de
 
 Este ejercicio de clase, tiene como objetivo mostrar aspectos de programación para la realización de una prueba técnica.
