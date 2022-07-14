@@ -6,7 +6,7 @@ Ejemplo de una prueba técnica Junior aplicable a cualquier lenguaje.
 [![Java](https://img.shields.io/badge/Code-Java-red)](https://java.org/)
 [![TypeScript](https://img.shields.io/badge/Code-TypeScript-blue)](https://www.typescriptlang.org/)
 [![Kotlin-js](https://img.shields.io/badge/Code-KotlinJS-blueviolet)](https://kotlinlang.org/docs/js-overview.html)
-[![Kotlin-native](https://img.shields.io/badge/Code-KotlinJS-blueviolet)](https://kotlinlang.org/docs/native-overview.html)
+[![Kotlin-native](https://img.shields.io/badge/Code-KotlinNative-blueviolet)](https://kotlinlang.org/docs/native-overview.html)
 [![LISENCE](https://img.shields.io/badge/Lisence-MIT-%23e64545)](https://joseluisgs.github.io/docs/license/)
 ![GitHub](https://img.shields.io/github/last-commit/joseluisgs/Prueba-Tecnica-Cola-Prioridad-Sin-Repetidos-Kotlin)
 
