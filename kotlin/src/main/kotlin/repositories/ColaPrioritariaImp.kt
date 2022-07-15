@@ -56,6 +56,6 @@ class ColaPrioritariaImp : ColaPrioritaria {
 
     override fun getAll(): List<Proceso> {
         // De mayor a menor prioridad
-        return cola.toList().sortedBy { it.prioridad }.reversed()
+        return cola.toList().sortedByDescending { it.prioridad }
     }
 }
